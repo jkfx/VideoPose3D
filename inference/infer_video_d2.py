@@ -143,7 +143,7 @@ def main(args):
             'h': im.shape[0],
         }
         
-        np.savez_compressed(out_name, boxes=boxes, segments=segments, keypoints=keypoints, metadata=metadata)
+        #np.savez_compressed(out_name, boxes=boxes, segments=segments, keypoints=keypoints, metadata=metadata)
         datas = {
             'boxes': boxes,
             'segments': segments,
