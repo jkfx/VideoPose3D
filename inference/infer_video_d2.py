@@ -144,6 +144,16 @@ def main(args):
         }
         
         np.savez_compressed(out_name, boxes=boxes, segments=segments, keypoints=keypoints, metadata=metadata)
+        datas = {
+            'boxes': boxes,
+            'segments': segments,
+            'keypoints': keypoints,
+            'metadata': metadata
+        }
+        for key, value in datas.items():
+            datas[key] = np.array(value, dtype=object)
+        np.savez_compressed(out_name, **datas)
+
 
 
 if __name__ == '__main__':
